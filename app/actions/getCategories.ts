@@ -2,9 +2,13 @@ import { CategoryTypes } from "@/types/types";
 
 const url = `${process.env.NEXT_PUBLIC_API_URL}/categories`;
 
-const getCategories = async (): Promise<CategoryTypes[]> => {
+export const getCategories = async (): Promise<CategoryTypes[]> => {
   const res = await fetch(url);
   return res.json();
 };
 
-export default getCategories;
+export const getCategory = async (id: string): Promise<CategoryTypes> => {
+  const url = `${process.env.NEXT_PUBLIC_API_URL}/categories/${id}`;
+  const res = await fetch(url);
+  return res.json();
+};

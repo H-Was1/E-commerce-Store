@@ -14,14 +14,15 @@ const getProducts = async (query: Query): Promise<productTypes[]> => {
   const url = qs.stringifyUrl({
     url: URL,
     query: {
-      colorId: query.colorId,
       sizeId: query.sizeId,
       categoryId: query.categoryId,
+      colorId: query.colorId,
       isFeatured: query.isFeatured,
     },
   });
-  const res = await fetch(URL);
+  console.log(query.sizeId);
 
+  const res = await fetch(url);
   return res.json();
 };
 

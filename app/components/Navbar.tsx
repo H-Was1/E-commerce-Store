@@ -2,8 +2,8 @@ import React from "react";
 import Container from "./ui/container";
 import Link from "next/link";
 import MainNav from "./MainNav";
-import getCategories from "../actions/getCategories";
 import NavbarActions from "./NavbarActions";
+import { getCategories } from "../actions/getCategories";
 
 const Navbar = async () => {
   const categories = await getCategories();

@@ -5,8 +5,10 @@ const formatter = new Intl.NumberFormat("en-Us", {
   currency: "USD",
 });
 
-const Currency = ({ value }: { value?: string | number }) => {
-  return <div className="font-semibold">{formatter.format(Number(value))}</div>;
+const Currency = ({ value }: { value: string | number }) => {
+  return (
+    <span className="font-semibold">{formatter.format(Number(value))}</span>
+  );
 };
 
 export default Currency;
