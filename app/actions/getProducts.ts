@@ -20,7 +20,6 @@ const getProducts = async (query: Query): Promise<productTypes[]> => {
       isFeatured: query.isFeatured,
     },
   });
-  console.log(query.sizeId);
 
   const res = await fetch(url);
   return res.json();
